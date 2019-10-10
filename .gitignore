@@ -1,5 +1,7 @@
 # Directories to ignore
 node_modules
+dist
+docs
 
 # Ignore icomoon demo files etc. except 'fonts' directory
 /icomoon/*
