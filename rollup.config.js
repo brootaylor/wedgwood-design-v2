@@ -19,8 +19,6 @@ const plugins = [
 export default [
     {
         // Me trying to dynamically update the service worker version number
-        // I don't think this is the right solution though.
-        // I may set up the logic in a Nunjucks serviceworker file
         input: './src/serviceworker.js',
         output: [
             {
