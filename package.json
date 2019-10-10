@@ -1,0 +1,16 @@
+{
+  "name": "wedgwood-design-v2",
+  "version": "1.0.0",
+  "description": "Wedgwood Design Limited's website (v2).",
+  "keywords": [
+    "personal",
+    "website",
+    "company-site"
+  ],
+  "author": "Bruce Taylor",
+  "license": "SEE LICENSE IN LICENSE",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
