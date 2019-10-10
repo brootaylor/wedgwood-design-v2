@@ -18,14 +18,28 @@
   "scripts": {
     "clean": "rimraf dist",
     "prebuild": "npm run clean",
-    "build": "npm run styles && npm run static",
+    "build": "npm-run-all build:*",
+    "build:css": "npm run scss && npm run autoprefixer",
+    "build:static": "rsync -rm src/offline src/static src/*.html src/robots.txt src/sitemap.xml dist",
+    "watch:css": "onchange 'src/styles/*.scss' -- npm run build:css",
+    "watch": "npm-run-all --parallel server watch:*",
     "server": "http-server ./dist -g -o -c-1",
-    "styles": "npm run scss && npm run autoprefixer",
     "scss": "node-sass --output-style compressed --source-map true -o dist/styles src/styles",
     "autoprefixer": "postcss -u autoprefixer --map --no-map -r dist/styles/*.css",
-    "static": "rsync -rm src/offline src/images src/*.html src/favicon.ico dist",
-    "watch:css": "onchange 'src/scss/*.scss' -- npm run build:css",
-    "watch": "npm-run-all --parallel serve watch:*",
     "postinstall": "npm run watch"
-  }
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.6.4",
+    "http-server": "^0.11.1",
+    "node-sass": "^4.12.0",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^6.1.0",
+    "postcss-cli": "^6.1.3",
+    "rimraf": "^3.0.0"
+  },
+  "browserslist": [
+    "last 4 version",
+    "> 1%",
+    "IE 10"
+  ]
 }
