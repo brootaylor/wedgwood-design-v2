@@ -2,6 +2,11 @@
   "name": "wedgwood-design-v2",
   "version": "1.0.0",
   "description": "Wedgwood Design Limited's website (v2).",
+  "repository": "https://github.com/brootaylor/wedgwood-design-v2.git",
+  "bugs": {
+    "url": "https://github.com/brootaylor/wedgwood-design-v2/issues"
+  },
+  "homepage": "https://github.com/brootaylor/wedgwood-design-v2#readme",
   "keywords": [
     "personal",
     "website",
@@ -11,6 +16,16 @@
   "license": "SEE LICENSE IN LICENSE",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean",
+    "build": "npm run styles && npm run static",
+    "server": "http-server ./dist -g -o -c-1",
+    "styles": "npm run scss && npm run autoprefixer",
+    "scss": "node-sass --output-style compressed --source-map true -o dist/styles src/styles",
+    "autoprefixer": "postcss -u autoprefixer --map --no-map -r dist/styles/*.css",
+    "static": "rsync -rm src/offline src/images src/*.html src/favicon.ico dist",
+    "watch:css": "onchange 'src/scss/*.scss' -- npm run build:css",
+    "watch": "npm-run-all --parallel serve watch:*",
+    "postinstall": "npm run watch"
   }
 }
