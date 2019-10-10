@@ -1,8 +1,6 @@
 // rollup.config.js
 import json from 'rollup-plugin-json';
 import replace from 'rollup-plugin-replace';
-// import resolve from 'rollup-plugin-node-resolve';
-// import commonjs from 'rollup-plugin-commonjs';
 
 const pkg = require('./package.json');
 const name = pkg.name;
@@ -16,8 +14,6 @@ const plugins = [
         name,
         version
     })
-    // resolve(),
-    // commonjs(),
 ];
 
 export default [
