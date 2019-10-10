@@ -66,5 +66,18 @@
 		</footer>
 		<!-- / Footer content -->
 
+		<script>
+			if (navigator.serviceWorker) {
+				navigator.serviceWorker.register('/serviceworker.js');
+				if (navigator.serviceWorker.controller) {
+					window.addEventListener('load', () => {
+						navigator.serviceWorker.controller.postMessage({
+							command: 'trimCaches'
+						});
+					});
+				}
+			}
+		</script>
+
 	</body>
 </html>
