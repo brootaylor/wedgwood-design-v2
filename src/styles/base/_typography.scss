@@ -2,6 +2,9 @@
    Typography styles (Global).
    ========================================================================== */
 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+
 
 /* FONTS VARIABLE CONFIG
 ============================================= */
@@ -37,7 +40,7 @@ $font-weight-bold: 700; // Bold
 html {
     color: lighten($black, 10%);
     background-color: $white;
-    font-family: $font-family-primary;
+    font-family: $font-family-primary-custom;
     font-weight: $font-weight-light;
     font-style: $font-style-normal;
     font-size: $font-size-base;
@@ -47,9 +50,9 @@ html {
      * This is the 'hook' for custom fonts if they've been loaded
      * https://css-tricks.com/loading-web-fonts-with-the-web-font-loader/
      */
-    &.wf-active {
-        font-family: $font-family-primary-custom;
-    }
+    // &.wf-active {
+    //     font-family: $font-family-primary-custom;
+    // }
 }
 
 /*
