@@ -28,6 +28,8 @@
     "server": "http-server ./dist -g -o -c-1",
     "scss": "node-sass --output-style compressed --source-map true -o dist/styles src/styles",
     "autoprefixer": "postcss -u autoprefixer --map --no-map -r dist/styles/*.css",
+    "deploy-draft": "npm run build && netlify deploy",
+		"deploy-production": "netlify deploy --prod",
     "postinstall": "npm run watch"
   },
   "devDependencies": {
