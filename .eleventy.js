@@ -5,7 +5,6 @@ module.exports = function(eleventy) {
 	eleventy.addPassthroughCopy('./src/assets/images');
 	eleventy.addPassthroughCopy({ './src/robots.txt': 'robots.txt' });
 	eleventy.addPassthroughCopy({ './src/sitemap.xml': 'sitemap.xml' });
-	eleventy.addPassthroughCopy({ './src/serviceworker.js': 'serviceworker.js' });
 
 	// Config
 	return {
