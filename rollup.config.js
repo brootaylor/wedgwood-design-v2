@@ -22,7 +22,7 @@ export default [
         input: './src/serviceworker.js',
         output: [
             {
-                dir: 'dist',
+                dir: 'www',
                 format: 'cjs',
             }
         ],
