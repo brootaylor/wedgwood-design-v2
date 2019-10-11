@@ -35,7 +35,9 @@
 		</header>
 		<!-- / Masthead -->
 
-		{{ content | safe }}
+		{% block content %}
+			{{ content | safe }}
+		{% endblock %}
 
 		<footer role="contentinfo" id="footer">
 			<h2 class="visuallyhidden">Website tertiary content eg. blog, getting in touch.</h2>
