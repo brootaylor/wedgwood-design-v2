@@ -18,7 +18,7 @@ function updateStaticCache() {
 	return caches.open(staticCacheName).then(staticCache => {
 		// These files don't block installation
 		staticCache.addAll([
-			'./static/images/common/logo.png'
+			'./assets/images/common/logo.png'
 		].concat(offlinePages));
 		// These files must be cached for installation
 		return staticCache.addAll([
