@@ -1,23 +1,29 @@
-module.exports = function(eleventyConfig) {
+module.exports = function(eleventy) {
 
-    eleventyConfig.addPassthroughCopy({ "dist/static": "static" });
-    eleventyConfig.addPassthroughCopy({ "dist/styles": "styles" });
-    eleventyConfig.addPassthroughCopy({ "dist/robots.txt": "robots.txt" });
-    eleventyConfig.addPassthroughCopy({ "dist/sitemap.xml": "sitemap.xml" });
-    eleventyConfig.addPassthroughCopy({ "dist/serviceworker.js": "serviceworker.js" });
+	// Passthrough
+	eleventy.addPassthroughCopy({'./assets/styles': 'styles'});
+	// eleventy.addPassthroughCopy('./src/assets/fonts');
+	// eleventy.addPassthroughCopy('./src/assets/vectors');
 
-    return {
-        passthroughFileCopy: true,
-        markdownTemplateEngine: "njk",
-        templateFormats: [
-            "html",
-            "njk",
-            "md"
-        ],
-        dir: {
-            input: "src",
-            output: "_site",
-            includes: "includes"
-        }
-    }
+	// eleventy.addPassthroughCopy({ "./assets/static": "static" });
+	// eleventy.addPassthroughCopy({ "assets/styles": "styles" });
+	// eleventy.addPassthroughCopy({ "assets/robots.txt": "robots.txt" });
+	// eleventy.addPassthroughCopy({ "assets/sitemap.xml": "sitemap.xml" });
+	// eleventy.addPassthroughCopy({ "assets/serviceworker.js": "serviceworker.js" });
+
+	// Config
+	return {
+		dir: {
+			input: 'src',
+			output: 'www',
+			includes: "includes"
+		},
+		markdownTemplateEngine: "njk",
+		templateFormats: [
+			"html",
+			"njk",
+			"md"
+		],
+		passthroughFileCopy: true
+	};
 }

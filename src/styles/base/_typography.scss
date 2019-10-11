@@ -135,7 +135,7 @@ h2 {
             @include fontSize(26px);
         }
         @include break-point-min($bp-l) {
-            @include fontSize(30px);
+            @include fontSize(60px);
         }
 }
 h3 {

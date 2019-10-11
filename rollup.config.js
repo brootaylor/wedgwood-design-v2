@@ -22,7 +22,7 @@ export default [
         input: './src/serviceworker.js',
         output: [
             {
-                dir: 'dist',
+                dir: 'assets',
                 format: 'cjs',
             }
         ],

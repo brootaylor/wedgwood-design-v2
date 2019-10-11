@@ -2,7 +2,8 @@
 node_modules
 dist
 docs
-_site
+www
+#www/*
 
 # Local Netlify folder
 .netlify
