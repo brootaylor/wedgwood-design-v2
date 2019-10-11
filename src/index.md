@@ -1,7 +1,8 @@
 ---
 layout: "layouts/simple.njk"
-title: "Wedgwood Design"
-logo: "static/images/common/logo.png"
+brand: "Wedgwood Design"
+title: "Website Design and Development Services"
+logo: "/assets/images/common/logo.png"
 ---
 
 ## Website Design and Development

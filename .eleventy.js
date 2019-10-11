@@ -1,15 +1,11 @@
 module.exports = function(eleventy) {
 
 	// Passthrough
-	eleventy.addPassthroughCopy({'./assets/styles': 'styles'});
-	// eleventy.addPassthroughCopy('./src/assets/fonts');
-	// eleventy.addPassthroughCopy('./src/assets/vectors');
-
-	// eleventy.addPassthroughCopy({ "./assets/static": "static" });
-	// eleventy.addPassthroughCopy({ "assets/styles": "styles" });
-	// eleventy.addPassthroughCopy({ "assets/robots.txt": "robots.txt" });
-	// eleventy.addPassthroughCopy({ "assets/sitemap.xml": "sitemap.xml" });
-	// eleventy.addPassthroughCopy({ "assets/serviceworker.js": "serviceworker.js" });
+	eleventy.addPassthroughCopy('./src/assets/ico');
+	eleventy.addPassthroughCopy('./src/assets/images');
+	eleventy.addPassthroughCopy({ './src/robots.txt': 'robots.txt' });
+	eleventy.addPassthroughCopy({ './src/sitemap.xml': 'sitemap.xml' });
+	eleventy.addPassthroughCopy({ './src/serviceworker.js': 'serviceworker.js' });
 
 	// Config
 	return {

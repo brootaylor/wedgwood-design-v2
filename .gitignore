@@ -1,9 +1,7 @@
 # Directories to ignore
 node_modules
-dist
 docs
 www
-#www/*
 
 # Local Netlify folder
 .netlify
