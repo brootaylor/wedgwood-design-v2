@@ -43,7 +43,7 @@ Using commands like the following to automatically update / change the `package.
 * `npm version patch`
   * eg. 1.0.__*1*__
 
-```md
+```markdown
 The `serviceworker.js` file dynamically uses the `package.json` version value as it's version. This makes sure a newer version is installed when updated content is deployed.
 ```
 
