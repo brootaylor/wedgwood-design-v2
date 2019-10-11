@@ -1,6 +1,6 @@
 {
   "name": "wedgwood-design-v2",
-  "version": "1.1.2",
+  "version": "2.0.0",
   "description": "Wedgwood Design Limited's website (v2).",
   "repository": "https://github.com/brootaylor/wedgwood-design-v2.git",
   "bugs": {
@@ -19,20 +19,16 @@
     "clean": "rimraf www && mkdir www",
     "prebuild": "npm run clean",
     "server": "http-server ./www -g -o -c-1",
-
     "scss": "node-sass --output-style compressed --source-map true -o www/styles src/styles",
     "autoprefixer": "postcss -u autoprefixer --map --no-map -r www/styles/*.css",
-
     "watch:files": "eleventy --quiet --serve",
     "watch:styles": "onchange 'src/styles/**/*.scss' -- npm run build:styles",
     "watch:scripts": "npx rollup -c --watch",
     "watch": "npm-run-all --parallel watch:*",
-
     "build:files": "eleventy --quiet",
     "build:styles": "npm run scss && npm run autoprefixer",
     "build:scripts": "npx rollup -c",
     "build": "npm run build:styles && npm run build:scripts && npm run build:files",
-
     "deploy-draft": "npm run build && netlify deploy",
     "deploy-production": "netlify deploy --prod"
   },
