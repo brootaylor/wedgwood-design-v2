@@ -1,5 +1,0 @@
-# Redirect domain aliases to primary domain
-http://www.wedgwooddesign.co.uk/* http://wedgwooddesign.com/:splat 301!
-
-# Optional: Redirect default Netlify subdomain to primary domain
-http://wedgwooddesign.netlify.com/* http://wedgwooddesign.com/:splat 301!

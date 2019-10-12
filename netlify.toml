@@ -1,5 +1,13 @@
-[dev]
-    publish="www"
-
+# Build commands
 [build]
-    publish="www"
+    base = ""
+    publish = "www"
+
+# Redirect rules
+[[redirects]]
+    from = "http://www.wedgwooddesign.co.uk/*"
+    to = "http://wedgwooddesign.com/:splat"
+
+[[redirects]]
+    from = "http://wedgwooddesign.netlify.com/*"
+    to = "http://wedgwooddesign.com/:splat"
