@@ -1,6 +1,6 @@
 {
   "name": "wedgwood-design-v2",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "description": "Wedgwood Design Limited's website (v2).",
   "repository": "https://github.com/brootaylor/wedgwood-design-v2.git",
   "bugs": {
@@ -30,8 +30,8 @@
     "build": "npm run build:styles && npm run build:scripts && npm run build:files",
     "deploy-draft": "npm run build && netlify deploy",
     "deploy-production": "netlify deploy --prod",
-    "audit:accessibility": "npx pa11y http://wedgwooddesign.com",
-    "audit:performance": "lighthouse https://wedgwooddesign.com --budget-path=budget.json --view",
+    "audit:accessibility": "npx pa11y --standard WCAG2AA http://wedgwooddesign.com",
+    "audit:performance": "lighthouse https://wedgwooddesign.com --budget-path=budget.json --output-path=./wedgwood-performance-results.html --view",
     "audit:npm-local": "ncu",
     "audit:npm-global": "ncu -g"
   },

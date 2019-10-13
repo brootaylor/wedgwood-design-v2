@@ -35,7 +35,7 @@
 		border-top: 1px solid $grey;
 		margin-top: pxToEm(15px, $font-size-base);
 		padding-top: pxToEm(15px, $font-size-base);
-		color: lighten($black, 50%);
+		color: lighten($black, 40%);
 
 			@include break-point-min(768px) {
 				display: inline-block;
