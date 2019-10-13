@@ -3,5 +3,8 @@ node_modules
 docs
 www
 
+# Files to ignore
+*performance-results.html
+
 # Local Netlify folder
 .netlify
