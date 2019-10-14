@@ -14,7 +14,6 @@
   ],
   "author": "Bruce Taylor",
   "license": "SEE LICENSE IN LICENSE",
-  "main": "index.js",
   "scripts": {
     "clean": "rimraf www && mkdir www",
     "prebuild": "npm run clean",
