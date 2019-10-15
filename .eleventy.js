@@ -1,3 +1,5 @@
+const htmlmin = require("html-minifier");
+
 module.exports = function(eleventy) {
 
 	// Passthrough
@@ -12,6 +14,19 @@ module.exports = function(eleventy) {
 		watch: true,
 		browser: ["firefox"],
 		open: "local"
+	});
+
+	// HTML Minifier
+	eleventy.addTransform("htmlmin", function(content, outputPath) {
+		if( outputPath.endsWith(".html") ) {
+		  let minified = htmlmin.minify(content, {
+			useShortDoctype: true,
+			removeComments: true,
+			collapseWhitespace: true
+		  });
+		  return minified;
+		}
+		return content;
 	});
 
 	// Config
