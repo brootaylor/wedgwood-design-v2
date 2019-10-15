@@ -6,6 +6,14 @@ module.exports = function(eleventy) {
 	eleventy.addPassthroughCopy({ './src/robots.txt': 'robots.txt' });
 	eleventy.addPassthroughCopy({ './src/sitemap.xml': 'sitemap.xml' });
 
+	// BrowserSync
+	eleventy.setBrowserSyncConfig({
+		notify: true,
+		watch: true,
+		browser: ["firefox"],
+		open: "local"
+	});
+
 	// Config
 	return {
 		dir: {
