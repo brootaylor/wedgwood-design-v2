@@ -1,5 +1,3 @@
-const htmlmin = require("html-minifier");
-
 module.exports = function(eleventy) {
 
 	// BrowserSync
