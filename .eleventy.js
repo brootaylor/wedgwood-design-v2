@@ -2,32 +2,20 @@ const htmlmin = require("html-minifier");
 
 module.exports = function(eleventy) {
 
+	// BrowserSync
+	eleventy.setBrowserSyncConfig(require('./configs/browser-sync.config.js'));
+
 	// Passthrough
 	eleventy.addPassthroughCopy('./src/assets/ico');
 	eleventy.addPassthroughCopy('./src/assets/images');
 	eleventy.addPassthroughCopy({ './src/robots.txt': 'robots.txt' });
 	eleventy.addPassthroughCopy({ './src/sitemap.xml': 'sitemap.xml' });
 
-	// BrowserSync
-	eleventy.setBrowserSyncConfig({
-		notify: true,
-		watch: true,
-		browser: ["firefox"],
-		open: "local"
-	});
+	// Plugins
+	eleventy.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'));
 
-	// HTML Minifier
-	eleventy.addTransform("htmlmin", function(content, outputPath) {
-		if( outputPath.endsWith(".html") ) {
-		  let minified = htmlmin.minify(content, {
-			useShortDoctype: true,
-			removeComments: true,
-			collapseWhitespace: true
-		  });
-		  return minified;
-		}
-		return content;
-	});
+	// Transforms
+	eleventy.addTransform('minify', require('./configs/minify.js')); // HTML Minifier
 
 	// Config
 	return {

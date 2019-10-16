@@ -27,17 +27,21 @@
     "build:styles": "npm run scss && npm run autoprefixer",
     "build:scripts": "npx rollup -c",
     "build": "npm run build:styles && npm run build:scripts && npm run build:files",
+    "lint:markdown": "markdownlint src/**/*.md",
     "deploy-draft": "npm run build && netlify deploy",
     "deploy-production": "netlify deploy --prod",
     "audit:accessibility": "npx pa11y --standard WCAG2AA http://wedgwooddesign.com",
     "audit:performance": "lighthouse https://wedgwooddesign.com --budget-path=budget.json --output-path=./wedgwood-performance-results.html --view",
     "audit:npm-local": "ncu",
-    "audit:npm-global": "ncu -g"
+    "audit:npm-global": "ncu -g",
+    "debug": "DEBUG=* npx eleventy"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.9.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
     "autoprefixer": "^9.6.4",
     "html-minifier": "^4.0.0",
+    "markdownlint-cli": "^0.18.0",
     "node-sass": "^4.12.0",
     "npm-run-all": "^4.1.5",
     "onchange": "^6.1.0",
