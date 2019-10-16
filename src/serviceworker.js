@@ -1,7 +1,7 @@
 
 const version = '{{version}}';
 const name = '{{name}}';
-const staticCacheName = name + '__' + version;
+const staticCacheName = 'static' + name + '.' + version;
 const imageCacheName = 'images';
 const pagesCacheName = 'pages';
 const cacheList = [
