@@ -1,7 +1,10 @@
-
-const version = '{{version}}';
-const name = '{{name}}';
-const staticCacheName = 'static' + '__' + name + '.' + version;
+---
+permalink: /serviceworker.js
+eleventyExcludeFromCollections: true
+---
+const version = '{{ pkg.version }}';
+const name = '{{ pkg.name }}';
+const staticCacheName = 'static' + '@' + name + '.' + version;
 const imageCacheName = 'images';
 const pagesCacheName = 'pages';
 const cacheList = [
@@ -11,7 +14,18 @@ const cacheList = [
 ];
 const offlinePageGlobal = './offline/index.html';
 const offlinePages = [
-	'index.html'
+    {# {%- assign featured = collections.article | includes: 'data.tags','featured' -%}
+    {%- assign saved = featured | reverse -%}
+    {%- for item in saved limit: 6 -%}
+    '{{ item.url | pretty }}',
+    {%- endfor -%}
+    {%- for item in navigation.primary -%}
+    '{{ item.url }}',
+    {%- endfor -%}
+    {%- for item in navigation.secondary -%}
+    '{{ item.url }}',
+    {%- endfor -%} #}
+	'/'
 ];
 
 function updateStaticCache() {

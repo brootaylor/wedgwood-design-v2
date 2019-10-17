@@ -6,7 +6,7 @@ const pkg = require('./package.json');
 const name = pkg.name;
 const version = pkg.version;
 
-// Used for serviceworker.js in this instance
+// Used for main.js version output at the moment
 const plugins = [
     json(),
     replace({
@@ -18,11 +18,10 @@ const plugins = [
 
 export default [
     {
-        // Me trying to dynamically update the service worker version number
-        input: './src/serviceworker.js',
+        input: './src/scripts/main.js',
         output: [
             {
-                dir: 'www',
+                dir: 'www/scripts',
                 format: 'cjs',
             }
         ],
