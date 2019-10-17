@@ -7,7 +7,7 @@ module.exports = function(eleventy) {
 	eleventy.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'));
 
 	// Transforms
-	eleventy.addTransform('minify', require('./configs/minify.js')); // HTML Minifier
+	eleventy.addTransform('minify', require('./configs/minify.js'));
 
 	// Passthrough
 	eleventy.addPassthroughCopy('./src/assets/ico');
@@ -24,6 +24,8 @@ module.exports = function(eleventy) {
 			'liquid',
 			'html'
 		],
+
+		pathPrefix: '',
 
 		markdownTemplateEngine: 'liquid',
 		htmlTemplateEngine: 'njk',

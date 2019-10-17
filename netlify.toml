@@ -2,7 +2,6 @@
 [build]
     base = ""
     publish = "www"
-    command = "DEBUG=* eleventy"
 
 # Redirect rules
 [[redirects]]
