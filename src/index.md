@@ -3,6 +3,8 @@ layout: "layouts/simple.njk"
 brand: "Wedgwood Design"
 title: "Website Design and Development Services"
 logo: "/assets/images/common/logo.png"
+changefreq: weekly
+priority: 1
 ---
 
 ## Website Design & Development

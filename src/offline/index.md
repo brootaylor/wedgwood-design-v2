@@ -3,6 +3,7 @@ layout: "layouts/simple.njk"
 brand: "Wedgwood Design"
 title: "You're offline"
 logo: "/assets/images/common/logo.png"
+sitemapIgnore: true
 ---
 
 ## You are offline
