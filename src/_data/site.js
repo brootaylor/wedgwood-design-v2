@@ -2,7 +2,7 @@ module.exports = {
     title: 'Wedgwood Design',
     short_title: 'WD',
     description: 'Wedgwood Design company website',
-    url: process.env.URL || '',
+    rootUrl: process.env.URL || '',
     theme_color: '#212227',
     accent_color: '#20e',
     background_color: '#fff',

@@ -34,8 +34,8 @@ module.exports = function(eleventy) {
 
 		dir: {
 			input: 'src',
-			includes: 'includes',
-			data: 'data',
+			includes: '_includes',
+			data: '_data',
 			output: 'www',
 		}
 	};

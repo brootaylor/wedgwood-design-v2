@@ -1,20 +1,17 @@
 ---
 permalink: /sitemap.xml
-eleventyExcludeFromCollections: true
+sitemapIgnore: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- for page in collections.all %}
+{%- if page.data.sitemapIgnore !== true %}
 <url>
-    <loc>https://wedgwooddesign.com/</loc>
-    <lastmod>2019-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+  <loc>{{ site.rootUrl }}{{ page.url }}</loc>
+  <lastmod>{{ page.date.toISOString() }}</lastmod>
+  <changefreq>{{ page.data.changefreq }}</changefreq>
+  <priority>{{ page.data.priority }}</priority>
 </url>
-{# {%- for page in collections.all %}
-  {% set absoluteUrl %}{{ page.url | url | absoluteUrl(metadata.url) }}{% endset %}
-  <url>
-    <loc>{{ absoluteUrl }}</loc>
-    <lastmod>{{ page.date | htmlDateString }}</lastmod>
-  </url>
-{%- endfor %} #}
+{%- endif %}
+{%- endfor %}
 </urlset>
