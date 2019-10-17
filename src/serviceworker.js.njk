@@ -14,17 +14,6 @@ const cacheList = [
 ];
 const offlinePageGlobal = './offline/index.html';
 const offlinePages = [
-    {# {%- assign featured = collections.article | includes: 'data.tags','featured' -%}
-    {%- assign saved = featured | reverse -%}
-    {%- for item in saved limit: 6 -%}
-    '{{ item.url | pretty }}',
-    {%- endfor -%}
-    {%- for item in navigation.primary -%}
-    '{{ item.url }}',
-    {%- endfor -%}
-    {%- for item in navigation.secondary -%}
-    '{{ item.url }}',
-    {%- endfor -%} #}
 	'/'
 ];
 
