@@ -25,8 +25,6 @@ module.exports = function(eleventy) {
 			'html'
 		],
 
-		pathPrefix: '/',
-
 		markdownTemplateEngine: 'liquid',
 		htmlTemplateEngine: 'njk',
 		dataTemplateEngine: 'njk',
@@ -35,7 +33,7 @@ module.exports = function(eleventy) {
 		dir: {
 			input: 'src',
 			includes: 'includes',
-			//data: 'data',
+			data: 'data',
 			output: 'www',
 		}
 	};
