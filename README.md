@@ -67,3 +67,5 @@ The changes will now deployed to live. The `netlify.toml` file determines the bu
 ## Auto deployment
 
 This happens once changes have been merged into the *master* (production) branch.
+
+© [Wedgwood Design Limited](https://wedgwooddesign.com)
