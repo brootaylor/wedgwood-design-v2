@@ -1,10 +1,13 @@
 ---
-layout: "layouts/simple.njk"
-brand: "Wedgwood Design"
+layout: "layouts/default.njk"
+language: en-gb
 title: "Website Design and Development Services"
-logo: "/assets/images/common/logo.png"
+summary: ''
+bodyClass: homepage
+date: 2019-11-01
 changefreq: weekly
 priority: 1
+hidden: false
 ---
 
 ## Website Design & Development

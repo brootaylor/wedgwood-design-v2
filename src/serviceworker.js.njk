@@ -4,7 +4,7 @@ eleventyExcludeFromCollections: true
 ---
 const version = '{{ pkg.version }}';
 const name = '{{ pkg.name }}';
-const staticCacheName = 'static' + '@' + name + '.' + version;
+const staticCacheName = 'static' + '@' + name + '_' + version;
 const imageCacheName = 'images';
 const pagesCacheName = 'pages';
 const cacheList = [
@@ -12,7 +12,7 @@ const cacheList = [
 	imageCacheName,
 	pagesCacheName
 ];
-const offlinePageGlobal = './offline/index.html';
+const offlinePageGlobal = 'offline.html';
 const offlinePages = [
 	'/'
 ];

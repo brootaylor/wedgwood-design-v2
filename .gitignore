@@ -5,4 +5,5 @@ www
 .netlify
 
 # Files to ignore
+.DS_Store
 *performance-results.html

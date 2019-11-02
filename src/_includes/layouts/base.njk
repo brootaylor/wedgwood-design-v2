@@ -3,57 +3,38 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>{{ brand }} | {{ title }}</title>
-		<meta name="description" content="Wedgwood Design provides consulting, strategy, design and development of accessible, standards compliant and well performing websites.">
+		<title>{% if type != 'homepage' %}{{ title }} | {% endif %}{{ site.title }}</title>
+		<meta name="description" content="{% if summary %}{{ summary }}{% else %}{{ site.description }}{% endif %}">
+		<meta name="robots" content="{% if hidden == true %}noindex{% else %}index{% endif %}, follow">
 
+		{% if hidden !== true %}<link rel="canonical" href="{{ site.rootUrl }}{{ page.url }}">{% endif %}
 		<link rel="stylesheet" href="{{ '/styles/main.css' | url }}">
 		<link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/ico/apple-touch-icon.png' | url }}">
 		<link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/ico/favicon-32x32.png' | url }}">
 		<link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/ico/favicon-16x16.png' | url }}">
 		<link rel="manifest" href="{{ '/assets/ico/manifest.json' | url }}">
-		<link rel="mask-icon" href="{{ '/assets/ico/safari-pinned-tab.svg' | url }}" color="#5bbad5">
+		<link rel="mask-icon" href="{{ '/assets/ico/safari-pinned-tab.svg' | url }}" color="{{ site.theme_color }}">
 		<link rel="shortcut icon" href="{{ '/assets/ico/favicon.ico' | url }}">
-		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileColor" content="{{ site.theme_color }}">
 		<meta name="msapplication-config" content="{{ '/assets/ico/browserconfig.xml' | url }}">
-		<meta name="theme-color" content="#ffffff">
+		<meta name="theme-color" content="{{ site.theme_color }}">
 	</head>
-	<body>
+	<body {% if bodyClass %}class="{{ bodyClass }}"{% endif %}>
 
 		<!-- "Skip-to" links. Helps assistive technologies -->
 		<a class="visuallyhidden" href="#main">Skip to the main content.</a>
 
-		<header role="banner" id="masthead">
-
-			<!-- Logo -->
-			<div class="logo">
-				<img src="{{ logo }}" alt="">
-				<h1 class="visuallyhidden">{{ brand }}.</h1>
-			</div>
-
-		</header>
+		{% include "header.njk" %}
 		<!-- / Masthead -->
 
 		{% block content %}
 			{{ content | safe }}
 		{% endblock %}
 
-		<footer role="contentinfo" id="footer">
-			<h2 class="visuallyhidden">Website tertiary content eg. blog, getting in touch.</h2>
-			<div class="copy">
-				<ul>
-					<li>
-						<a href="http://brootaylor.com" rel="external">Bruce Taylor's Blog</a>
-					</li>
-					<li>
-						<a href="mailto:info@wedgwooddesign.com">Get in touch</a>
-					</li>
-				</ul>
-				<small>&copy; 2015&ndash;<time datetime="2019">2019</time> Wedgwood Design. All rights reserved.</small>
-			</div>
-			<small class="reg">Wedgwood Design Limited. Registered in England and Wales No. 9091468. Registered Office: Victoria House, Staplefield Lane, Staplefield, West Sussex, RH17 6AS</small>
-		</footer>
+		{% include "footer.njk" %}
 		<!-- / Footer content -->
 
+		{# Service worker #}
 		<script>
 			if (navigator.serviceWorker) {
 				navigator.serviceWorker.register('/serviceworker.js');
@@ -67,7 +48,10 @@
 			}
 		</script>
 
-		<!-- Current page: {{ page.url | url }} -->
+<!--
+Current page: {{ page.url | url }}
+Last deployed: {{ date | dateLocalFriendly("LLLL d, y") }}
+-->
 
 	</body>
 </html>
