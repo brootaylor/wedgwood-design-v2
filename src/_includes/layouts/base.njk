@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="{{ language }}" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{% if type != 'homepage' %}{{ title }} | {% endif %}{{ site.title }}</title>
+		<meta name="description" content="{% if summary %}{{ summary }}{% else %}{{ site.description }}{% endif %}">
+		<meta name="robots" content="{% if hidden == true %}noindex{% else %}index{% endif %}, follow">
+
+		{% if hidden !== true %}<link rel="canonical" href="{{ site.rootUrl }}{{ page.url }}">{% endif %}
+		<link rel="stylesheet" href="{{ '/styles/main.css' | url }}">
+		<link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/ico/apple-touch-icon.png' | url }}">
+		<link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/ico/favicon-32x32.png' | url }}">
+		<link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/ico/favicon-16x16.png' | url }}">
+		<link rel="manifest" href="{{ '/assets/ico/manifest.json' | url }}">
+		<link rel="mask-icon" href="{{ '/assets/ico/safari-pinned-tab.svg' | url }}" color="{{ site.theme_color }}">
+		<link rel="shortcut icon" href="{{ '/assets/ico/favicon.ico' | url }}">
+		<meta name="msapplication-TileColor" content="{{ site.theme_color }}">
+		<meta name="msapplication-config" content="{{ '/assets/ico/browserconfig.xml' | url }}">
+		<meta name="theme-color" content="{{ site.theme_color }}">
+	</head>
+	<body {% if bodyClass %}class="{{ bodyClass }}"{% endif %}>
+
+		<!-- "Skip-to" links. Helps assistive technologies -->
+		<a class="visuallyhidden" href="#main">Skip to the main content.</a>
+
+		{% include "header.njk" %}
+		<!-- / Masthead -->
+
+		{% block content %}
+			{{ content | safe }}
+		{% endblock %}
+
+		{% include "footer.njk" %}
+		<!-- / Footer content -->
+
+		{# Service worker #}
+		<script>
+			if (navigator.serviceWorker) {
+				navigator.serviceWorker.register('/serviceworker.js');
+				if (navigator.serviceWorker.controller) {
+					window.addEventListener('load', () => {
+						navigator.serviceWorker.controller.postMessage({
+							command: 'trimCaches'
+						});
+					});
+				}
+			}
+		</script>
+
+<!--
+Current page: {{ page.url | url }}
+Last deployed: {{ date | dateLocalFriendly("LLLL d, y") }}
+-->
+
+	</body>
+</html>

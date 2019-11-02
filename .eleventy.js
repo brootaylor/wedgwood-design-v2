@@ -6,8 +6,12 @@ module.exports = function(eleventy) {
 	// Plugins
 	eleventy.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'));
 
+	// Add some utility filters
+	eleventy.addFilter('dateLocal', require("./src/utils/filters/date-local.js"));
+	eleventy.addFilter('dateLocalFriendly', require("./src/utils/filters/date-friendly.js"));
+
 	// Transforms
-	eleventy.addTransform('minify', require('./config/minify.js'));
+	eleventy.addTransform('minify-html', require('./src/utils/minify-html.js'));
 
 	// Passthrough
 	eleventy.addPassthroughCopy('./src/assets/ico');
@@ -21,13 +25,12 @@ module.exports = function(eleventy) {
 		templateFormats: [
 			'md',
 			'njk',
-			'liquid',
 			'html'
 		],
 
 		pathPrefix: '',
 
-		markdownTemplateEngine: 'liquid',
+		markdownTemplateEngine: 'njk',
 		htmlTemplateEngine: 'njk',
 		dataTemplateEngine: 'njk',
 		passthroughFileCopy: true,

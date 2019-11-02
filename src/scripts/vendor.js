@@ -1,9 +1,6 @@
 /**
- * This pulls the 'version' and 'name' values from package.json
- * Defined in rollup.config.js
+ * Vendor JS placeholder...
+ * Used "var" as presuming this script is a 3rd party (eg. jQuery) not written by us
+ * Even the minified version will be taken from their CDN (or equivalent)
  */
-const version = '{{version}}';
-const name = '{{name}}';
-const versionPrintOut = name + '.' + version;
-
-console.log('Placeholder vendor.js file generating this... ', versionPrintOut);
+console.log('Placeholder vendor.js file');

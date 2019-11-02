@@ -6,4 +6,4 @@ const version = '{{version}}';
 const name = '{{name}}';
 const versionPrintOut = name + '.' + version;
 
-console.log('Placeholder main.js file generating thiiiis... ', versionPrintOut);
+console.log('Placeholder main.js file generating this... ', versionPrintOut);
