@@ -1,13 +1,7 @@
 ---
-layout: "layouts/default.njk"
-language: en-gb
 title: "Website Design and Development Services"
 summary: ''
-bodyClass: homepage
 date: 2019-11-02
-changefreq: weekly
-priority: 1
-hidden: false
 ---
 
 ## Website Design & Development

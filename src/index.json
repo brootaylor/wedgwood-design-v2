@@ -1,0 +1,8 @@
+{
+    "layout" : "layouts/default.njk",
+    "bodyClass": "homepage",
+    "language" : "en-gb",
+    "changefreq": "weekly",
+    "priority": "1",
+    "hidden": "false"
+}
