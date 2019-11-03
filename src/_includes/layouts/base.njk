@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>{% if type != 'homepage' %}{{ title }} | {% endif %}{{ site.title }}</title>
+		<title>{% if bodyClass != 'homepage' %}{{ title }} | {% endif %}{{ site.title }}</title>
 		<meta name="description" content="{% if summary %}{{ summary }}{% else %}{{ site.description }}{% endif %}">
 		<meta name="robots" content="{% if hidden == true %}noindex{% else %}index{% endif %}, follow">
 
