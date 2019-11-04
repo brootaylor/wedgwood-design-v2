@@ -3,11 +3,12 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>{% if type != 'homepage' %}{{ title }} | {% endif %}{{ site.title }}</title>
+		<title>{% if bodyClass != 'homepage' %}{{ title }} | {% endif %}{{ site.title }}</title>
 		<meta name="description" content="{% if summary %}{{ summary }}{% else %}{{ site.description }}{% endif %}">
 		<meta name="robots" content="{% if hidden == true %}noindex{% else %}index{% endif %}, follow">
 
 		{% if hidden !== true %}<link rel="canonical" href="{{ site.rootUrl }}{{ page.url }}">{% endif %}
+		<link rel="preload" as="image" type="image/jpeg" href="{{ site.logo | url }}">
 		<link rel="stylesheet" href="{{ '/styles/main.css' | url }}">
 		<link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/ico/apple-touch-icon.png' | url }}">
 		<link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/ico/favicon-32x32.png' | url }}">
