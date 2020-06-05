@@ -2,8 +2,6 @@
 [build]
   command = "npm run build"
   publish = "www"
-#   functions = "src/functions"
-#   NODE_ENV = "10.15.3"
 
 # Default site wide settings
 # https://docs.netlify.com/configure-builds/file-based-configuration/#post-processing

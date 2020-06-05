@@ -46,17 +46,17 @@
     "debug": "DEBUG=* npx eleventy"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.10.0",
+    "@11ty/eleventy": "^0.11.0",
     "@11ty/eleventy-plugin-rss": "^1.0.7",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
-    "@babel/core": "^7.9.6",
-    "@babel/preset-env": "^7.9.6",
-    "autoprefixer": "^9.7.6",
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "autoprefixer": "^9.8.0",
     "cross-env": "^7.0.2",
-    "eslint": "^7.0.0",
+    "eslint": "^7.1.0",
     "html-minifier": "^4.0.0",
     "luxon": "^1.24.1",
-    "markdownlint-cli": "^0.23.0",
+    "markdownlint-cli": "^0.23.1",
     "node-sass": "^4.14.1",
     "npm-run-all": "^4.1.5",
     "onchange": "^7.0.2",
@@ -68,7 +68,7 @@
     "rollup-plugin-json": "^4.0.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-replace": "^2.2.0",
-    "rollup-plugin-terser": "^5.3.0",
+    "rollup-plugin-terser": "^6.1.0",
     "sass-lint": "^1.13.1"
   },
   "browserslist": [
@@ -77,6 +77,6 @@
     "IE 10"
   ],
   "dependencies": {
-    "serialize-javascript": "^3.0.0"
+    "serialize-javascript": "^3.1.0"
   }
 }
