@@ -71,7 +71,7 @@ html {
  * @param $size - the value in pixel you want to convert
  *
  * e.g. p {@include fontSize(12px);}
- * 
+ *
  */
 
 // Function for converting a px based font-size to rem.
@@ -116,7 +116,6 @@ h6 {
 h1 {
     @include fontSize(26px);
     transition: font-size 0.2s linear;
-    margin: pxToEm(0 0 15px 0, $font-size-base);
 
         @include break-point-min($bp-m) {
             @include fontSize(30px);
@@ -129,7 +128,6 @@ h1 {
 h2 {
     @include fontSize(22px);
     transition: font-size 0.2s linear;
-    margin: pxToEm(10px 0 15px 0, $font-size-base);
 
         @include break-point-min($bp-m) {
             @include fontSize(26px);
@@ -141,7 +139,6 @@ h2 {
 h3 {
     @include fontSize(18px);
     transition: font-size 0.2s linear;
-    margin: pxToEm(10px 0 15px 0, $font-size-base);
 
         @include break-point-min($bp-m) {
             @include fontSize(22px);
@@ -156,12 +153,10 @@ h3 {
 
 main {
     p {
-        margin: pxToEm(0 0 15px 0, $font-size-base);
-
-            @include break-point-min($bp-m) {
-                @include fontSize($font-size-base + 2);
-                transition: font-size 0.2s linear;
-            }
+        @include break-point-min($bp-m) {
+			@include fontSize($font-size-base + 2);
+			transition: font-size 0.2s linear;
+		}
     }
 
     ul {
@@ -255,7 +250,7 @@ hr {
     display: block;
     height: pxToEm(1px, $font-size-base);
     border: 0;
-    border-top: pxToEm(1px, $font-size-base) solid darken($white, 70%);
+    border-top: pxToEm(1px, $font-size-base) solid darken($white, 10%);
     margin: pxToEm(15px 0, $font-size-base);
     padding: 0;
 }
@@ -263,7 +258,10 @@ hr {
 .hr__big {
     height: pxToEm(5px, $font-size-base);
     border-top-width: pxToEm(5px, $font-size-base);
-    margin: pxToEm(40px 0, $font-size-base);
+
+	article & {
+		margin-top: pxToEm(40px, $font-size-base);
+	}
 }
 
 ///////////////////////////////////////////////////
