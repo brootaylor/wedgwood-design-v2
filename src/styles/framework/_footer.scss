@@ -4,6 +4,8 @@
    ========================================================================== */
 
 #footer {
+	display: flex;
+	flex-wrap: wrap;
 	margin-top: pxToEm(15px, $font-size-base);
 	margin-bottom: pxToEm(15px, $font-size-base);
 	padding-top: pxToEm(15px, $font-size-base);
@@ -12,7 +14,6 @@
 	ul {
 		list-style: none;
 		padding: 0;
-		margin: pxToEm(0 0 5px 0, $font-size-base);
 	}
 	li {
 		display: inline-block;

@@ -1,3 +1,6 @@
+// Environment config
+require('dotenv').config();
+
 module.exports = function(eleventy) {
 
 	// BrowserSync
@@ -9,6 +12,9 @@ module.exports = function(eleventy) {
 	// Add some utility filters
 	eleventy.addFilter('dateLocal', require("./src/utils/filters/date-local.js"));
 	eleventy.addFilter('dateLocalFriendly', require("./src/utils/filters/date-friendly.js"));
+
+	// Shortcodes
+	eleventy.addShortcode('year', () => `${new Date().getFullYear()}`);
 
 	// Transforms
 	eleventy.addTransform('minify-html', require('./src/utils/minify-html.js'));
