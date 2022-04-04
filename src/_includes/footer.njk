@@ -1,12 +1,12 @@
 <footer role="contentinfo" id="footer">
-	<h2 class="visuallyhidden">Website tertiary content eg. blog, getting in touch.</h2>
+	<h2 class="visuallyhidden">Website tertiary content eg. copyright information and getting in touch.</h2>
 	<div class="copy">
-		{# <ul>
+		<small>&copy; 2015&ndash;<time datetime="{% year %}">{% year %}</time> {{ site.title }}. All rights reserved.</small>
+		<ul>
 			<li>
-				<a href="mailto:info@wedgwooddesign.com">Get in touch</a>
+				<a href="mailto:brootaylor@gmail.com">Contact us</a>
 			</li>
-		</ul> #}
-		<small>&copy; 2015&ndash;<time datetime="{{ date | dateLocalFriendly("y") }}">{{ date | dateLocalFriendly("y") }}</time> Wedgwood Design. All rights reserved.</small>
+		</ul>
 	</div>
 	<small class="reg">Wedgwood Design Limited. Registered in England and Wales No. 9091468. Registered Office: Victoria House, Staplefield Lane, Staplefield, West Sussex, RH17 6AS</small>
 </footer>

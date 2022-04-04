@@ -1,15 +1,28 @@
+{#
+	-> Setting page level content variables
+#}
+{% set pageTitle = title + ' | ' + site.title %}
+
 <!doctype html>
 <html lang="{{ language }}" dir="ltr">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>{{ title }} | {{ site.title }}</title>
+		<title>{{ pageTitle | safe }}</title>
 		<meta name="description" content="{% if summary %}{{ summary }}{% else %}{{ site.description }}{% endif %}">
 		<meta name="robots" content="{% if hidden == true %}noindex{% else %}index{% endif %}, follow">
 
-		{% if hidden !== true %}<link rel="canonical" href="{{ site.rootUrl }}{{ page.url }}">{% endif %}
+		{# Displaying the build number / version #}
+		<meta name="build" content="{{ pkg.version }}.{{ site.timeCurrent }}">
+
+		{# Styles & Logo image (pre-load)... #}
 		<link rel="preload" as="image" type="image/jpeg" href="{{ site.logo | url }}">
-		<link rel="stylesheet" href="{{ '/styles/main.css' | url }}">
+		<link rel="preload" as="style" href="/styles/main.css?version={{ pkg.version }}.{{ site.timeCurrent }}">
+
+		{# Styles (load) #}
+		<link rel="stylesheet" href="/styles/main.css?version={{ pkg.version }}.{{ site.timeCurrent }}">
+
+		{% if hidden !== true %}<link rel="canonical" href="{{ site.rootUrl }}{{ page.url }}">{% endif %}
 		<link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/ico/apple-touch-icon.png' | url }}">
 		<link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/ico/favicon-32x32.png' | url }}">
 		<link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/ico/favicon-16x16.png' | url }}">
