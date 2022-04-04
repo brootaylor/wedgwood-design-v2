@@ -1,7 +1,7 @@
 module.exports = {
     title: 'Wedgwood Design',
     short_title: 'WD',
-    description: 'Wedgwood Design provides consulting, strategy, design and development of accessible, standards compliant and well performing websites.',
+    description: 'Wedgwood Design, based in West Sussex, England, offers consulting, strategy, design, and development of accessible, standards-compliant, high-performing websites.',
     rootUrl: process.env.URL || '',
     logo: '/assets/images/common/logo.png',
     theme_color: '#212227',

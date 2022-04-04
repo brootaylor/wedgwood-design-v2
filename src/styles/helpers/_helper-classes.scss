@@ -3,6 +3,18 @@
    ========================================================================== */
 
 /*
+ * Flow utility class
+ */
+
+.flow {
+	--flow-space: 1em; // `em` value used cause wanting this value to be relative to it's context.
+
+	> * + * {
+		margin-top: var(--flow-space);
+	}
+}
+
+/*
  * Hide visually and from screen readers: h5bp.com/u
  */
 
