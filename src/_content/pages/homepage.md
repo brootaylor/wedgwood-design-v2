@@ -2,7 +2,7 @@
 title: Website Design and Development Services
 summary: ''
 bodyClass: homepage
-date: 2023-08-05
+date: 2024-01-08
 changefreq: weekly
 priority: 1
 permalink: /
@@ -14,7 +14,7 @@ Wedgwood Design, based in West Sussex, England, offers consulting, strategy, des
 
 <a href="https://brootaylor.com/" rel="external">Bruce Taylor</a> is the Director of Wedgwood Design. A highly skilled and experienced Frontend Web Developer & UI Engineer with nearly 20 years of experience. Over 10 of those in the travel / flight industry designing &amp; developing front-end solutions for **Airmiles**, **Avios** and **IAG Loyalty**.
 
-Over the years Wedgwood Design has worked on a wide variety of web-related projects with companies and businesses like **Macmillan Cancer Support**, **Pegasus**, **Charanga Music**, **Time Inc.**, **Analog Implant Laboratory**, **MerchantCantos**, **Boston T Party**, **IAG Loyalty**, **UX Brighton**, **Brunswick Group** and **Currys plc**.
+Over the years Wedgwood Design has worked on a wide variety of web-related projects with companies and businesses like **Macmillan Cancer Support**, **Pegasus**, **Charanga Music**, **Time Inc.**, **Analog Implant Laboratory**, **MerchantCantos**, **Boston T Party**, **IAG Loyalty**, **UX Brighton**, **Brunswick Group**, **Currys plc** and **Hugo & Cat**.
 
 <hr class="hr__big">
 

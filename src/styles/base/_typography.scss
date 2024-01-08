@@ -2,10 +2,6 @@
    Typography styles (Global).
    ========================================================================== */
 
-   @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap');
-
-
-
 /* FONTS VARIABLE CONFIG
 ============================================= */
 
@@ -16,9 +12,9 @@ $font-size-base: 16px;
 $font-color-base: lighten($black, 10%);
 
 // Font families
-$font-family-primary: sans-serif, Arial, "Helvetica Neue", Helvetica;
-$font-family-primary-custom: "Open Sans", sans-serif, Arial, "Helvetica Neue", Helvetica; // 300,300i,400,400i,700,700i (Google Fonts used)
-$font-family-secondary: Georgia, Times, "Times New Roman", serif;
+$font-family-primary: ui-sans-serif, system-ui;
+$font-family-primary-custom: ui-sans-serif, system-ui;
+$font-family-secondary: ui-monospace, 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace;
 
 // Font styles
 $font-style-normal: normal;
@@ -112,6 +108,7 @@ h4,
 h5,
 h6 {
     font-weight: $font-weight-regular;
+	text-wrap: balance;
 }
 h1 {
     @include fontSize(26px);
@@ -152,18 +149,15 @@ h3 {
 ////////////////////////////////////////
 
 main {
-    p {
+    p,
+	ul {
+		max-width: 75ch;
+		text-wrap: pretty;
+
         @include break-point-min($bp-m) {
 			@include fontSize($font-size-base + 2);
 			transition: font-size 0.2s linear;
 		}
-    }
-
-    ul {
-        @include break-point-min($bp-m) {
-            @include fontSize($font-size-base + 2);
-            transition: font-size 0.2s linear;
-        }
     }
 }
 
