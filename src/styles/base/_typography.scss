@@ -151,7 +151,6 @@ h3 {
 main {
     p,
 	ul {
-		max-width: 75ch;
 		text-wrap: pretty;
 
         @include break-point-min($bp-m) {
